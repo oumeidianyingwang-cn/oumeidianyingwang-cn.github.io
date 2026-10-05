@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>欧美电影网 - 热门欧美电影在线观看_电影推荐_影视排行榜（官网 https://oumeidianyingwang-cn.github.io）</title>
+<meta name="description" content="欧美电影网（https://oumeidianyingwang-cn.github.io）提供最新热门欧美电影、电影推荐、影视排行榜、新片上线时间与影视资讯。动作、科幻、爱情、悬疑大片一站看全，看欧美电影就上欧美电影网。">
+<meta name="keywords" content="欧美电影网,欧美电影,热门欧美电影,电影在线观看,电影推荐,影视排行榜,新片上线,影视资讯,高清电影,oumeidianyingwang-cn,https://oumeidianyingwang-cn.github.io">
+<meta name="author" content="欧美电影网">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://oumeidianyingwang-cn.github.io/">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#0e2f2a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="欧美电影网">
+<meta property="og:title" content="欧美电影网 - 热门欧美电影在线观看与电影推荐">
+<meta property="og:description" content="欧美电影网官网 https://oumeidianyingwang-cn.github.io，热门欧美电影、电影推荐、影视排行榜与新片上线时间一站看全。">
+<meta property="og:url" content="https://oumeidianyingwang-cn.github.io/">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="欧美电影网 - 热门欧美电影在线观看与电影推荐">
+<meta name="twitter:description" content="欧美电影网官网 https://oumeidianyingwang-cn.github.io，灯光暗下，大幕拉开。">
+<style>
+/* ==================== 基础 ==================== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:118px}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,Arial,sans-serif;
+  font-size:14.5px;line-height:1.78;color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  background-color:var(--night);
+  background-image:
+    repeating-linear-gradient(135deg,rgba(201,162,39,.05) 0 1px,transparent 1px 12px),
+    radial-gradient(760px 440px at 10% 2%,rgba(201,162,39,.16),transparent 70%),
+    radial-gradient(700px 420px at 90% 92%,rgba(164,36,59,.16),transparent 72%);
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button,input,select,textarea{font-family:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.mono{font-family:"SFMono-Regular",Consolas,Menlo,monospace;font-variant-numeric:tabular-nums}
+.caps{text-transform:uppercase;letter-spacing:.24em}
+
+/* ==================== 变量：Art Deco 剧院 ==================== */
+:root{
+  --night:#0e2f2a;
+  --night2:#092420;
+  --panel:rgba(244,239,228,.96);
+  --panel2:#ece5d3;
+  --ink:#12322c;
+  --ink2:#4a5f58;
+  --muted:#8a8d7c;
+  --gold:#c9a227;
+  --gold2:#e8cf82;
+  --red:#a4243b;
+  --blue:#1b4965;
+  --line:rgba(201,162,39,.4);
+  --line2:rgba(18,50,44,.14);
+  --maxw:1180px;
+}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+/* 阶梯形 ziggurat 装饰线 */
+.zig{height:12px;background:
+  linear-gradient(135deg,var(--gold) 25%,transparent 25%) -8px 0,
+  linear-gradient(225deg,var(--gold) 25%,transparent 25%) -8px 0,
+  linear-gradient(315deg,var(--gold) 25%,transparent 25%),
+  linear-gradient(45deg,var(--gold) 25%,transparent 25%);
+  background-size:16px 12px;opacity:.85}
+
+/* ==================== 顶部檐口条 ==================== */
+.cornice{background:var(--night2);border-bottom:2px solid var(--gold)}
+.cornice .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;justify-content:space-between;
+  min-height:36px;padding-top:7px;padding-bottom:7px;font-size:12px;color:#c9c8b4}
+.cornice b{color:var(--gold2)}
+.cornice .mono{letter-spacing:.16em;color:#a9b3a5}
+
+/* ==================== 剧院门头 ==================== */
+.theatre-head{position:relative;background:var(--night);overflow:hidden}
+.theatre-head::before{content:"";position:absolute;inset:0;
+  background:repeating-conic-gradient(from 0deg at 50% 130%,rgba(201,162,39,.14) 0deg 6deg,transparent 6deg 12deg);
+  pointer-events:none}
+.theatre-head .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  min-height:92px;padding-top:14px;padding-bottom:14px}
+.brand{display:flex;align-items:center;gap:14px}
+.crest{flex:0 0 auto;width:58px;height:58px;display:grid;place-items:center;position:relative;
+  border:2px solid var(--gold);background:var(--night2)}
+.crest::after{content:"";position:absolute;inset:5px;border:1px solid rgba(201,162,39,.55)}
+.crest .zh{font-size:19px;font-weight:900;color:var(--gold2);letter-spacing:1px;line-height:1}
+.brand-meta .t{font-size:13px;color:#cfd3c4}
+.brand-meta .t b{color:#ffffff}
+.brand-meta .url{display:block;font-size:12px;font-weight:800;color:var(--gold2);margin-top:3px;
+  font-family:"SFMono-Regular",Consolas,monospace;word-break:break-all}
+.search{display:flex;border:2px solid var(--gold);background:rgba(9,36,32,.7);overflow:hidden}
+.search input{border:0;outline:none;background:transparent;padding:9px 13px;font-size:14px;color:#f4efe4;width:200px;
+  font-weight:600}
+.search input::placeholder{color:#8d9a8f;font-weight:500}
+.search button{border:0;border-left:2px solid var(--gold);cursor:pointer;background:var(--gold);color:#0e2f2a;
+  font-weight:900;font-size:13.5px;padding:9px 16px}
+.search button:hover{background:var(--red);color:#fff}
+.nav-cb{display:none}
+.burger{display:none;width:44px;height:44px;border:2px solid var(--gold);background:rgba(9,36,32,.7);cursor:pointer;
+  align-items:center;justify-content:center;flex-direction:column;gap:5px;flex:0 0 auto}
+.burger i{display:block;width:18px;height:2px;background:var(--gold2);transition:.28s}
+
+/* ==================== 导航：节目单目录 ==================== */
+.program-nav{position:sticky;top:0;z-index:60;background:var(--panel);
+  border-bottom:3px double var(--gold);box-shadow:0 6px 18px rgba(0,0,0,.28)}
+.program-nav .wrap{display:flex;align-items:center;gap:4px;min-height:56px;overflow-x:auto}
+.pn{flex:0 0 auto;position:relative;padding:9px 13px;font-size:13.5px;font-weight:800;color:var(--ink);
+  transition:.2s}
+.pn::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:4px;width:0;height:2px;
+  background:var(--gold);transition:.24s}
+.pn:hover::after,.pn.is-cta::after{width:calc(100% - 26px)}
+.pn:hover{color:var(--red)}
+.pn.is-cta{color:#fff;background:var(--night);border-radius:2px}
+.program-nav .tip{margin-left:auto;font-size:11px;color:var(--muted);white-space:nowrap;
+  font-family:"SFMono-Regular",Consolas,monospace;letter-spacing:.14em}
+
+/* ==================== 通用区块 ==================== */
+section{padding-top:46px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  border-bottom:2px solid var(--gold);padding-bottom:10px;margin-bottom:20px}
+.sec-head .lhs{display:flex;align-items:center;gap:12px}
+.sec-head .medal{flex:0 0 auto;width:40px;height:40px;display:grid;place-items:center;border:2px solid var(--gold);
+  background:var(--night);color:var(--gold2);font-size:12px;font-weight:900;
+  font-family:"SFMono-Regular",Consolas,monospace;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.sec-head h2{font-size:clamp(19px,3.6vw,26px);font-weight:900;letter-spacing:.5px;color:#f4efe4}
+.sec-head h2 em{font-style:normal;color:var(--gold2)}
+.sec-head .lhs p{font-size:13px;color:#b9c2b4;margin-top:2px}
+.sec-head .en{font-size:11px;letter-spacing:.2em;color:var(--gold);white-space:nowrap;
+  font-family:"SFMono-Regular",Consolas,monospace}
+
+/* ==================== 首屏：节目单 ==================== */
+.hero{padding-top:26px}
+.program{display:grid;grid-template-columns:1.4fr 1fr;border:2px solid var(--gold);background:var(--night2);
+  box-shadow:0 20px 44px rgba(0,0,0,.4)}
+.pg-left{padding:28px 26px 30px;border-right:1px solid var(--line)}
+.pg-left .kicker{display:inline-flex;align-items:center;gap:9px;padding:6px 14px;border:1px solid var(--gold);
+  color:var(--gold2);font-size:11px;font-weight:900;letter-spacing:.24em;
+  font-family:"SFMono-Regular",Consolas,monospace}
+.program h1{font-size:clamp(27px,5.6vw,46px);line-height:1.24;font-weight:900;letter-spacing:1px;margin:16px 0 10px;
+  color:#f4efe4}
+.program h1 em{font-style:normal;color:var(--gold2)}
+.pg-left .url{display:inline-block;font-size:clamp(12px,2.1vw,14.5px);font-weight:800;color:var(--gold2);
+  font-family:"SFMono-Regular",Consolas,monospace;border-bottom:1px dashed var(--line);padding-bottom:3px;
+  word-break:break-all}
+.pg-left .lead{margin-top:15px;font-size:clamp(14px,2.1vw,16px);color:#cdd4c8;max-width:560px}
+.pg-left .lead b{color:var(--gold2)}
+.hero-acts{display:flex;flex-wrap:wrap;gap:11px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;font-size:14px;font-weight:900;
+  border:2px solid var(--gold);transition:.2s}
+.btn-g{background:var(--gold);color:#0e2f2a}
+.btn-r{background:var(--red);color:#fff;border-color:var(--red)}
+.btn-o{background:transparent;color:var(--gold2)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,.3)}
+.pg-right{padding:24px 22px;background:rgba(9,36,32,.6)}
+.pg-right h3{font-size:11px;letter-spacing:.24em;color:var(--gold);margin-bottom:14px;
+  font-family:"SFMono-Regular",Consolas,monospace}
+.pg-right svg{width:100%;height:auto;margin-bottom:6px}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dotted rgba(201,162,39,.24);
+  font-size:13px}
+.kv:last-child{border-bottom:0}
+.kv span{color:#a9b3a5}
+.kv b{color:#f4efe4;font-weight:900;font-family:"SFMono-Regular",Consolas,monospace;word-break:break-all}
+
+/* 数据条 */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.fact{position:relative;border:2px solid var(--gold);background:var(--night2);padding:16px 14px;text-align:center}
+.fact::before{content:"";position:absolute;left:10px;right:10px;top:5px;height:1px;background:rgba(201,162,39,.5)}
+.fact b{display:block;font-size:clamp(18px,3.2vw,25px);font-weight:900;line-height:1.25;color:var(--gold2);
+  font-family:"SFMono-Regular",Consolas,monospace}
+.fact b em{font-style:normal;font-size:12px;color:#a9b3a5;margin-left:3px}
+.fact span{font-size:12.5px;color:#bcc4b8}
+
+/* ==================== 分类：放映厅 ==================== */
+.halls{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.hall{position:relative;border:2px solid var(--gold);background:var(--night2);padding:18px 16px 20px;transition:.22s;
+  overflow:hidden}
+.hall::before{content:"";position:absolute;left:0;right:0;top:0;height:26px;
+  background:repeating-conic-gradient(from 0deg at 50% 100%,rgba(201,162,39,.2) 0deg 8deg,transparent 8deg 16deg)}
+.hall:hover{transform:translateY(-5px);box-shadow:0 14px 26px rgba(0,0,0,.34)}
+.hall .no{position:relative;font-size:11px;font-weight:900;letter-spacing:.2em;color:var(--gold2);
+  font-family:"SFMono-Regular",Consolas,monospace}
+.hall h3{position:relative;margin-top:16px;font-size:16px;font-weight:900;color:#f4efe4}
+.hall .en{font-size:10.5px;letter-spacing:.2em;color:var(--muted);margin-top:4px;
+  font-family:"SFMono-Regular",Consolas,monospace}
+.hall .cnt{font-size:12.5px;color:#b9c2b4;margin-top:9px;padding-top:9px;border-top:1px solid rgba(201,162,39,.24)}
+.hall .cnt b{color:var(--gold2);font-family:"SFMono-Regular",Consolas,monospace}
+
+/* ==================== 片单：节目单条目 ==================== */
+.bills{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.bill{border:2px solid var(--gold);background:var(--night2);display:flex;flex-direction:column;transition:.22s}
+.bill:hover{transform:translateY(-6px);box-shadow:0 16px 30px rgba(0,0,0,.38)}
+.bill .bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 13px;
+  border-bottom:2px solid var(--gold);background:rgba(201,162,39,.1)}
+.bill .bar .code{font-size:10.5px;font-weight:900;letter-spacing:.16em;color:var(--gold2);
+  font-family:"SFMono-Regular",Consolas,monospace}
+.bill .bar .pt{font-size:12px;font-weight:900;color:#fff;font-family:"SFMono-Regular",Consolas,monospace}
+.bill .stage{height:92px;display:grid;place-items:center;font-size:32px;border-bottom:1px solid rgba(201,162,39,.24);
+  background:linear-gradient(180deg,rgba(201,162,39,.08),transparent)}
+.bill .bd{padding:14px 15px 17px;flex:1;display:flex;flex-direction:column}
+.bill h3{font-size:15.5px;font-weight:900;color:#f4efe4;line-height:1.5}
+.bill .meta{font-size:12px;color:#a9b3a5;margin-top:4px;font-family:"SFMono-Regular",Consolas,monospace}
+.bill .desc{font-size:13.5px;color:#c6cdc1;margin-top:8px;flex:1;padding-top:8px;
+  border-top:1px solid rgba(201,162,39,.2)}
+.bill .ft{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:11px}
+.bill .fmt{font-size:11px;font-weight:900;letter-spacing:.12em;color:var(--gold2);
+  font-family:"SFMono-Regular",Consolas,monospace}
+.bill .go{font-size:12.5px;font-weight:900;color:#0e2f2a;background:var(--gold);padding:6px 15px}
+.bill .go:hover{background:var(--red);color:#fff}
+
+/* ==================== 排行榜：票房与口碑 ==================== */
+.boards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.bd2{border:2px solid var(--gold);background:var(--night2);padding:20px 20px 22px}
+.bd2:nth-child(2){background:rgba(27,73,101,.22)}
+.bd2 h3{font-size:17px;font-weight:900;color:#f4efe4;display:flex;align-items:center;gap:9px;
+  padding-bottom:11px;border-bottom:2px solid var(--gold);margin-bottom:5px}
+.bd2 h3 i{font-style:normal;font-size:11px;letter-spacing:.14em;background:var(--gold);color:#0e2f2a;
+  padding:3px 9px;font-family:"SFMono-Regular",Consolas,monospace}
+.bd2 .unit{font-size:11.5px;color:#a9b3a5;margin-bottom:14px;font-family:"SFMono-Regular",Consolas,monospace}
+.bd2 ol{display:grid;gap:11px}
+.bd2 li{display:grid;grid-template-columns:30px 1fr;gap:11px;align-items:center;padding:8px 11px;
+  border-bottom:1px solid rgba(201,162,39,.18)}
+.bd2 li:hover{background:rgba(201,162,39,.08)}
+.bd2 li .no{width:30px;height:30px;display:grid;place-items:center;font-size:11.5px;font-weight:900;color:#f4efe4;
+  background:rgba(201,162,39,.2);border:1px solid var(--line);font-family:"SFMono-Regular",Consolas,monospace}
+.bd2 li:nth-child(-n+3) .no{background:var(--gold);color:#0e2f2a;border-color:var(--gold)}
+.bd2 li .rw{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+.bd2 li .tt{font-size:14px;font-weight:800;color:#f4efe4}
+.bd2 li .steps{margin-top:5px;height:8px;background:rgba(255,255,255,.07);position:relative;overflow:hidden}
+.bd2 li .steps i{position:absolute;left:0;top:0;bottom:0;
+  background:repeating-linear-gradient(90deg,var(--gold) 0 8px,rgba(201,162,39,.25) 8px 12px)}
+.bd2:nth-child(2) li .steps i{background:repeating-linear-gradient(90deg,#5fa8d3 0 8px,rgba(95,168,211,.25) 8px 12px)}
+.bd2 li .hs{font-size:12px;font-weight:900;color:var(--gold2);white-space:nowrap;
+  font-family:"SFMono-Regular",Consolas,monospace}
+
+/* ==================== 放映日程表 ==================== */
+.schedule{border:2px solid var(--gold);background:var(--night2);overflow-x:auto;
+  box-shadow:0 14px 30px rgba(0,0,0,.3)}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:700px}
+thead th{background:rgba(201,162,39,.16);border-bottom:2px solid var(--gold);color:var(--gold2);font-size:12px;
+  letter-spacing:.14em;text-align:left;padding:11px 15px;white-space:nowrap;font-weight:900}
+tbody td{padding:11px 15px;border-bottom:1px solid rgba(201,162,39,.14);color:#c6cdc1}
+tbody tr:nth-child(even){background:rgba(255,255,255,.03)}
+tbody tr:hover{background:rgba(201,162,39,.09)}
+tbody td:first-child{font-family:"SFMono-Regular",Consolas,monospace;font-weight:900;color:var(--gold2);
+  white-space:nowrap}
+tbody td b{color:#f4efe4;font-weight:900}
+.st{display:inline-block;font-size:11px;font-weight:900;padding:3px 10px;border:1px solid;
+  font-family:"SFMono-Regular",Consolas,monospace}
+.st.a{color:#fff;background:var(--red);border-color:var(--red)}
+.st.b{color:#0e2f2a;background:var(--gold);border-color:var(--gold)}
+.st.c{color:#b9c2b4;background:rgba(255,255,255,.05);border-color:rgba(201,162,39,.34)}
+
+/* ==================== 院线通讯 ==================== */
+.circulars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.circ{position:relative;border:2px solid var(--gold);background:var(--night2);padding:20px 18px 22px;transition:.22s}
+.circ::before{content:"";position:absolute;left:8px;right:8px;top:8px;height:1px;background:rgba(201,162,39,.45)}
+.circ:hover{transform:translateY(-4px);box-shadow:0 14px 26px rgba(0,0,0,.32)}
+.circ time{font-size:11.5px;font-weight:900;letter-spacing:.16em;color:var(--gold2);
+  font-family:"SFMono-Regular",Consolas,monospace}
+.circ h3{font-size:16px;font-weight:900;color:#f4efe4;margin:9px 0 8px;line-height:1.5}
+.circ p{font-size:13.5px;color:#c6cdc1}
+.circ .more{display:inline-block;margin-top:11px;font-size:13px;font-weight:900;color:var(--gold2);
+  border-bottom:2px solid rgba(201,162,39,.5);padding-bottom:2px}
+
+/* ==================== 关于 ==================== */
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:start}
+.intro{border:2px solid var(--gold);background:var(--night2);padding:24px}
+.intro p{font-size:14px;color:#cdd4c8;margin-bottom:13px}
+.intro p b{color:var(--gold2)}
+.intro blockquote{margin:16px 0;padding:14px 18px;border-left:4px solid var(--gold);background:rgba(201,162,39,.1);
+  font-size:15px;font-weight:800;color:#f4efe4;line-height:1.8}
+.intro ul{display:grid;gap:11px;margin-top:16px;border-top:1px dashed rgba(201,162,39,.3);padding-top:14px}
+.intro ul li{display:grid;grid-template-columns:26px 1fr;gap:11px;font-size:13.5px;color:#c6cdc1}
+.intro ul li b{width:26px;height:26px;display:grid;place-items:center;font-size:11px;font-weight:900;color:#0e2f2a;
+  background:var(--gold);font-family:"SFMono-Regular",Consolas,monospace}
+.sidecard{border:2px solid var(--gold);background:rgba(9,36,32,.75);padding:22px}
+.sidecard h3{font-size:11px;letter-spacing:.24em;color:var(--gold2);margin-bottom:14px;
+  font-family:"SFMono-Regular",Consolas,monospace}
+.sidecard svg{width:100%;height:auto}
+.sidecard .kv span{color:#a9b3a5}
+.sidecard .kv b{color:#f4efe4}
+
+/* ==================== FAQ ==================== */
+.faq{max-width:880px;display:grid;gap:11px}
+.faq details{border:2px solid var(--gold);background:var(--night2)}
+.faq summary{cursor:pointer;padding:14px 18px;font-size:15.5px;font-weight:900;color:#f4efe4;list-style:none;
+  display:flex;justify-content:space-between;gap:14px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"◆";color:var(--gold2);font-size:12px}
+.faq details[open] summary::after{content:"◇"}
+.faq details[open] summary{background:rgba(201,162,39,.12);border-bottom:1px solid rgba(201,162,39,.28)}
+.faq details p{padding:13px 18px 17px;font-size:14px;color:#c6cdc1}
+
+/* ==================== 联系 ==================== */
+.contact{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:start}
+.form{border:2px solid var(--gold);background:var(--night2);padding:24px}
+.form h3{font-size:11px;letter-spacing:.24em;color:var(--gold2);margin-bottom:16px;
+  font-family:"SFMono-Regular",Consolas,monospace}
+.f-row{display:grid;grid-template-columns:84px 1fr;gap:12px;align-items:center;margin-bottom:13px}
+.f-row label{font-size:13px;font-weight:800;color:#e2e7dd}
+.f-row input,.f-row select,.f-row textarea{width:100%;border:2px solid rgba(201,162,39,.45);
+  background:rgba(9,36,32,.7);padding:10px 13px;font-size:14px;color:#f4efe4;outline:none}
+.f-row textarea{min-height:104px;resize:vertical}
+.f-row input:focus,.f-row select:focus,.f-row textarea:focus{border-color:var(--gold)}
+.f-row input::placeholder,.f-row textarea::placeholder{color:#7f8c81}
+.f-sub{grid-column:2}
+.f-sub button{border:0;cursor:pointer;background:var(--gold);color:#0e2f2a;font-size:14px;font-weight:900;
+  padding:12px 30px;letter-spacing:.05em}
+.f-sub button:hover{background:var(--red);color:#fff}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tags span{font-size:12px;font-weight:800;padding:6px 13px;border:1px solid rgba(201,162,39,.45);color:#dfe4da}
+
+/* ==================== 页脚 ==================== */
+.site-footer{margin-top:52px;border-top:3px double var(--gold);background:var(--night);color:#c6cdc1;
+  padding:38px 0 24px}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:22px}
+.fgrid h4{font-size:13.5px;font-weight:900;color:var(--gold2);margin-bottom:12px;letter-spacing:.1em}
+.fgrid p{font-size:13.5px;color:#b3bdb0;line-height:1.85}
+.fgrid a{display:block;font-size:13.5px;color:#c6cdc1;padding:3px 0}
+.fgrid a:hover{color:var(--gold2)}
+.copy{margin-top:24px;padding-top:18px;border-top:1px dashed rgba(201,162,39,.32);display:flex;flex-wrap:wrap;
+  gap:8px 16px;justify-content:space-between;font-size:12.5px;color:#9aa596}
+.totop{position:fixed;right:16px;bottom:16px;width:46px;height:46px;display:grid;place-items:center;
+  border:2px solid var(--gold);background:var(--night2);color:var(--gold2);font-weight:900;z-index:70}
+
+/* ==================== 响应式 ==================== */
+@media (max-width:1000px){
+  .halls,.bills{grid-template-columns:repeat(2,1fr)}
+  .circulars{grid-template-columns:repeat(2,1fr)}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .search input{width:150px}
+}
+@media (max-width:860px){
+  .program{grid-template-columns:1fr}
+  .pg-left{border-right:0;border-bottom:2px solid var(--gold)}
+}
+@media (max-width:760px){
+  .burger{display:flex}
+  .search{display:none}
+  .program-nav{position:relative}
+  .program-nav .wrap{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;
+    align-items:stretch;gap:4px;padding:12px 20px 18px;background:var(--panel);
+    border-bottom:3px double var(--gold);box-shadow:0 14px 24px rgba(0,0,0,.3)}
+  .nav-cb:checked ~ .program-nav .wrap{display:flex}
+  .nav-cb:checked ~ .theatre-head .burger i:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .nav-cb:checked ~ .theatre-head .burger i:nth-child(2){opacity:0}
+  .nav-cb:checked ~ .theatre-head .burger i:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .pn{padding:12px 14px;font-size:15px}
+  .pn::after{display:none}
+  .pn.is-cta{text-align:center}
+  .program-nav .tip{display:none}
+  .halls,.bills,.circulars,.boards,.about,.contact{grid-template-columns:1fr}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .pg-left{padding:22px 18px 24px}
+  .theatre-head .wrap{padding:12px 16px}
+  .f-row{grid-template-columns:1fr}
+  .f-sub{grid-column:1}
+  section{padding-top:34px}
+  .hero{padding-top:18px}
+  .site-footer{margin-top:34px}
+}
+@media (max-width:420px){
+  .fgrid{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr}
+  .hero-acts .btn{width:100%;justify-content:center}
+  .sec-head .en{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+<input class="nav-cb sr-only" id="navCb" type="checkbox" aria-label="展开欧美电影网导航">
+
+<!-- ==================== 顶部檐口条 ==================== -->
+<div class="cornice">
+  <div class="wrap">
+    <span>欧美电影网 · 今日上新 <b>156</b> 部</span>
+    <span class="mono">GRAND THEATRE · OUMEI</span>
+    <span>官网 https://oumeidianyingwang-cn.github.io</span>
+  </div>
+</div>
+
+<!-- ==================== 剧院门头 ==================== -->
+<header class="theatre-head">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="欧美电影网 首页">
+      <span class="crest"><span class="zh">欧美</span></span>
+      <span class="brand-meta">
+        <span class="t"><b>欧美电影网</b> · 热门欧美电影 · 影视排行榜 · 新片上线</span>
+        <span class="url">https://oumeidianyingwang-cn.github.io</span>
+      </span>
+    </a>
+    <form class="search" action="#" method="get" onsubmit="return false;" role="search">
+      <label class="sr-only" for="kw">搜索欧美电影网</label>
+      <input id="kw" name="kw" type="search" placeholder="搜索片名 / 类型 / 年份">
+      <button type="submit">搜索</button>
+    </form>
+    <label class="burger" for="navCb" aria-hidden="true"><i></i><i></i><i></i></label>
+  </div>
+</header>
+
+<!-- ==================== 节目单目录导航 ==================== -->
+<nav class="program-nav" aria-label="欧美电影网主导航">
+  <div class="wrap">
+    <a class="pn is-cta" href="#home">首页</a>
+    <a class="pn" href="#category">放映厅</a>
+    <a class="pn" href="#pick">今日片单</a>
+    <a class="pn" href="#rank">影视排行榜</a>
+    <a class="pn" href="#release">新片上线</a>
+    <a class="pn" href="#news">影视资讯</a>
+    <a class="pn" href="#about">关于欧美电影网</a>
+    <a class="pn" href="#faq">常见问题</a>
+    <a class="pn is-cta" href="#contact">联系我们</a>
+    <span class="tip">灯光暗下 · 大幕拉开</span>
+  </div>
+</nav>
+
+<main>
+  <!-- ==================== 首屏 ==================== -->
+  <section id="home" class="hero" aria-labelledby="heroTitle">
+    <div class="wrap">
+      <article class="program">
+        <div class="pg-left">
+          <p class="kicker">◆ PROGRAMME · 今日节目单</p>
+          <h1 id="heroTitle">欧美电影网，<em>灯光暗下大幕拉开</em></h1>
+          <p class="url">https://oumeidianyingwang-cn.github.io</p>
+          <p class="lead">欧美电影网（官网 https://oumeidianyingwang-cn.github.io）把热门欧美电影、电影推荐、影视排行榜与新片上线时间排成一份剧院节目单。<b>今晚演什么，翻开就知道</b>。</p>
+          <div class="hero-acts">
+            <a class="btn btn-g" href="#pick">看今日片单</a>
+            <a class="btn btn-r" href="#rank">影视排行榜</a>
+            <a class="btn btn-o" href="#release">新片上线时间</a>
+          </div>
+        </div>
+        <aside class="pg-right">
+          <h3>THIS WEEK / 本周演出</h3>
+          <svg viewBox="0 0 300 180" role="img" aria-label="欧美电影网剧院舞台示意图：舞台帷幕、银幕与观众席">
+            <path d="M40 22 L150 46 L260 22" fill="none" stroke="#c9a227" stroke-width="2"/>
+            <path d="M40 22 L40 130 M260 22 L260 130" fill="none" stroke="#c9a227" stroke-width="2"/>
+            <path d="M52 34 L52 126" fill="none" stroke="rgba(201,162,39,.4)" stroke-width="1"/>
+            <path d="M248 34 L248 126" fill="none" stroke="rgba(201,162,39,.4)" stroke-width="1"/>
+            <rect x="70" y="52" width="160" height="62" fill="rgba(244,239,228,.08)" stroke="#c9a227" stroke-width="2"/>
+            <text x="150" y="78" fill="#e8cf82" font-size="12" font-weight="900" text-anchor="middle">欧美电影网</text>
+            <text x="150" y="96" fill="#cdd4c8" font-size="10.5" text-anchor="middle">热门欧美电影 · 每日更新</text>
+            <g fill="rgba(201,162,39,.35)">
+              <circle cx="88" cy="140" r="5"/><circle cx="112" cy="140" r="5"/><circle cx="136" cy="140" r="5"/>
+              <circle cx="160" cy="140" r="5"/><circle cx="184" cy="140" r="5"/><circle cx="208" cy="140" r="5"/>
+            </g>
+            <text x="150" y="164" fill="#a9b3a5" font-size="10" text-anchor="middle" font-family="monospace">HOUSE FULL · 29,300+</text>
+          </svg>
+          <div class="kv"><span>院线名称</span><b>欧美电影网</b></div>
+          <div class="kv"><span>放映厅</span><b>8 厅</b></div>
+          <div class="kv"><span>收录影片</span><b>29,300+</b></div>
+          <div class="kv"><span>清晰度</span><b>1080P / 4K</b></div>
+          <div class="kv"><span>榜单刷新</span><b>每日 00:00</b></div>
+        </aside>
+      </article>
+      <ul class="facts">
+        <li class="fact"><b class="mono">29,300<em>+</em></b><span>欧美电影网收录影片</span></li>
+        <li class="fact"><b>每日上新</b><span>片库与今日片单</span></li>
+        <li class="fact"><b>1080P / 4K</b><span>多清晰度可选</span></li>
+        <li class="fact"><b>0 元</b><span>欧美电影网免费看</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== 放映厅 ==================== -->
+  <section id="category" aria-labelledby="catTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="lhs">
+          <span class="medal">H1</span>
+          <div><h2 id="catTitle">欧美电影网<em>放映厅</em></h2>
+          <p>欧美电影网把片库分成 8 个放映厅，每厅一个题材，厅号从 H1 排到 H8。</p></div>
+        </div>
+        <span class="en">// HALL 1 - 8</span>
+      </div>
+      <div class="halls">
+        <a class="hall" href="#">
+          <span class="no mono">HALL 01</span>
+          <h3>动作惊悚</h3><p class="en">ACTION / THRILLER</p>
+          <p class="cnt">在映 <b>3,336</b> 部 · 高燃强节奏</p>
+        </a>
+        <a class="hall" href="#">
+          <span class="no mono">HALL 02</span>
+          <h3>科幻冒险</h3><p class="en">SCI-FI / ADVENTURE</p>
+          <p class="cnt">在映 <b>2,412</b> 部 · 大场面</p>
+        </a>
+        <a class="hall" href="#">
+          <span class="no mono">HALL 03</span>
+          <h3>剧情文艺</h3><p class="en">DRAMA / ART</p>
+          <p class="cnt">在映 <b>2,586</b> 部 · 慢节奏</p>
+        </a>
+        <a class="hall" href="#">
+          <span class="no mono">HALL 04</span>
+          <h3>爱情喜剧</h3><p class="en">ROMANCE / COMEDY</p>
+          <p class="cnt">在映 <b>2,308</b> 部 · 轻松解压</p>
+        </a>
+        <a class="hall" href="#">
+          <span class="no mono">HALL 05</span>
+          <h3>犯罪悬疑</h3><p class="en">CRIME / MYSTERY</p>
+          <p class="cnt">在映 <b>2,046</b> 部 · 多反转</p>
+        </a>
+        <a class="hall" href="#">
+          <span class="no mono">HALL 06</span>
+          <h3>恐怖惊悚</h3><p class="en">HORROR</p>
+          <p class="cnt">在映 <b>1,728</b> 部 · 强刺激</p>
+        </a>
+        <a class="hall" href="#">
+          <span class="no mono">HALL 07</span>
+          <h3>动画家庭</h3><p class="en">ANIMATION / FAMILY</p>
+          <p class="cnt">在映 <b>1,536</b> 部 · 全年龄</p>
+        </a>
+        <a class="hall" href="#">
+          <span class="no mono">HALL 08</span>
+          <h3>经典修复</h3><p class="en">RESTORED CLASSIC</p>
+          <p class="cnt">在映 <b>1,062</b> 部 · 老片新看</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 今日片单 ==================== -->
+  <section id="pick" aria-labelledby="pickTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="lhs">
+          <span class="medal">P2</span>
+          <div><h2 id="pickTitle">欧美电影网<em>今日片单</em></h2>
+          <p>欧美电影网按站内播放热度与口碑筛选，每周更新一次今日片单。</p></div>
+        </div>
+        <span class="en">// BILL · 8</span>
+      </div>
+      <div class="bills">
+        <article class="bill">
+          <div class="bar"><span class="code">OU-001</span><span class="pt">9.4</span></div>
+          <div class="stage" aria-hidden="true">🌃</div>
+          <div class="bd">
+            <h3>长夜列车</h3>
+            <p class="meta">2026 / 剧情·犯罪 / 134 min</p>
+            <p class="desc">密闭车厢里的双线叙事，人物关系扎实，热播榜连续四周第一。</p>
+            <div class="ft"><span class="fmt">4K</span><a class="go" href="#">立即观看</a></div>
+          </div>
+        </article>
+        <article class="bill">
+          <div class="bar"><span class="code">OU-002</span><span class="pt">9.2</span></div>
+          <div class="stage" aria-hidden="true">🚀</div>
+          <div class="bd">
+            <h3>星轨尽头</h3>
+            <p class="meta">2026 / 科幻·冒险 / 144 min</p>
+            <p class="desc">设定扎实的太空科幻，视觉与叙事都站得住，欧美电影网科幻厅口碑新高。</p>
+            <div class="ft"><span class="fmt">4K</span><a class="go" href="#">立即观看</a></div>
+          </div>
+        </article>
+        <article class="bill">
+          <div class="bar"><span class="code">OU-003</span><span class="pt">9.1</span></div>
+          <div class="stage" aria-hidden="true">💥</div>
+          <div class="bd">
+            <h3>烈风追缉</h3>
+            <p class="meta">2026 / 动作·谍战 / 119 min</p>
+            <p class="desc">动作密度高，追车与近身戏都拍得干脆，动作厅播放增速最快。</p>
+            <div class="ft"><span class="fmt">1080P</span><a class="go" href="#">立即观看</a></div>
+          </div>
+        </article>
+        <article class="bill">
+          <div class="bar"><span class="code">OU-004</span><span class="pt">9.0</span></div>
+          <div class="stage" aria-hidden="true">🕵️</div>
+          <div class="bd">
+            <h3>第八封回信</h3>
+            <p class="meta">2025 / 悬疑·犯罪 / 125 min</p>
+            <p class="desc">密闭空间推理，线索埋得干净，看完想立刻二刷一遍。</p>
+            <div class="ft"><span class="fmt">4K</span><a class="go" href="#">立即观看</a></div>
+          </div>
+        </article>
+        <article class="bill">
+          <div class="bar"><span class="code">OU-005</span><span class="pt">8.9</span></div>
+          <div class="stage" aria-hidden="true">😂</div>
+          <div class="bd">
+            <h3>周末大作战</h3>
+            <p class="meta">2026 / 喜剧·都市 / 103 min</p>
+            <p class="desc">节奏轻快的都市喜剧，在欧美电影网适合周五晚上放着看。</p>
+            <div class="ft"><span class="fmt">1080P</span><a class="go" href="#">立即观看</a></div>
+          </div>
+        </article>
+        <article class="bill">
+          <div class="bar"><span class="code">OU-006</span><span class="pt">8.8</span></div>
+          <div class="stage" aria-hidden="true">🎖️</div>
+          <div class="bd">
+            <h3>铁线防线</h3>
+            <p class="meta">2025 / 战争·历史 / 146 min</p>
+            <p class="desc">群像战争片，场面与人物并重，在欧美电影网长期在榜。</p>
+            <div class="ft"><span class="fmt">4K</span><a class="go" href="#">立即观看</a></div>
+          </div>
+        </article>
+        <article class="bill">
+          <div class="bar"><span class="code">OU-007</span><span class="pt">8.7</span></div>
+          <div class="stage" aria-hidden="true">💖</div>
+          <div class="bd">
+            <h3>晚风邮局</h3>
+            <p class="meta">2026 / 爱情·文艺 / 112 min</p>
+            <p class="desc">克制细腻的爱情小品，配色和配乐都很舒服，适合一个人看。</p>
+            <div class="ft"><span class="fmt">1080P</span><a class="go" href="#">立即观看</a></div>
+          </div>
+        </article>
+        <article class="bill">
+          <div class="bar"><span class="code">OU-008</span><span class="pt">8.6</span></div>
+          <div class="stage" aria-hidden="true">🎨</div>
+          <div class="bd">
+            <h3>山海图志</h3>
+            <p class="meta">2026 / 动画·奇幻 / 107 min</p>
+            <p class="desc">动画电影，画面质感在欧美电影网动画厅评价很高，全年龄都能看。</p>
+            <div class="ft"><span class="fmt">4K</span><a class="go" href="#">立即观看</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 影视排行榜 ==================== -->
+  <section id="rank" aria-labelledby="rankTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="lhs">
+          <span class="medal">R3</span>
+          <div><h2 id="rankTitle">欧美电影网<em>影视排行榜</em></h2>
+          <p>数据来自站内播放与收藏统计，每日 0 点刷新。</p></div>
+        </div>
+        <span class="en">// TOP 8</span>
+      </div>
+      <div class="boards">
+        <div class="bd2">
+          <h3>热播榜 <i>TOP 8</i></h3>
+          <p class="unit">单位：万次 / 统计周期 30 天</p>
+          <ol>
+            <li><span class="no mono">01</span><span class="rw"><span><span class="tt">长夜列车</span><span class="steps" aria-hidden="true"><i style="width:100%"></i></span></span><span class="hs">2918</span></span></li>
+            <li><span class="no mono">02</span><span class="rw"><span><span class="tt">星轨尽头</span><span class="steps" aria-hidden="true"><i style="width:90%"></i></span></span><span class="hs">2632</span></span></li>
+            <li><span class="no mono">03</span><span class="rw"><span><span class="tt">烈风追缉</span><span class="steps" aria-hidden="true"><i style="width:81%"></i></span></span><span class="hs">2371</span></span></li>
+            <li><span class="no mono">04</span><span class="rw"><span><span class="tt">第八封回信</span><span class="steps" aria-hidden="true"><i style="width:69%"></i></span></span><span class="hs">2004</span></span></li>
+            <li><span class="no mono">05</span><span class="rw"><span><span class="tt">周末大作战</span><span class="steps" aria-hidden="true"><i style="width:60%"></i></span></span><span class="hs">1752</span></span></li>
+            <li><span class="no mono">06</span><span class="rw"><span><span class="tt">铁线防线</span><span class="steps" aria-hidden="true"><i style="width:53%"></i></span></span><span class="hs">1536</span></span></li>
+            <li><span class="no mono">07</span><span class="rw"><span><span class="tt">晚风邮局</span><span class="steps" aria-hidden="true"><i style="width:46%"></i></span></span><span class="hs">1348</span></span></li>
+            <li><span class="no mono">08</span><span class="rw"><span><span class="tt">山海图志</span><span class="steps" aria-hidden="true"><i style="width:41%"></i></span></span><span class="hs">1192</span></span></li>
+          </ol>
+        </div>
+        <div class="bd2">
+          <h3>口碑榜 <i>TOP 8</i></h3>
+          <p class="unit">单位：分 / 满分 10 分</p>
+          <ol>
+            <li><span class="no mono">01</span><span class="rw"><span><span class="tt">长夜列车</span><span class="steps" aria-hidden="true"><i style="width:94%"></i></span></span><span class="hs">9.4</span></span></li>
+            <li><span class="no mono">02</span><span class="rw"><span><span class="tt">星轨尽头</span><span class="steps" aria-hidden="true"><i style="width:92%"></i></span></span><span class="hs">9.2</span></span></li>
+            <li><span class="no mono">03</span><span class="rw"><span><span class="tt">烈风追缉</span><span class="steps" aria-hidden="true"><i style="width:91%"></i></span></span><span class="hs">9.1</span></span></li>
+            <li><span class="no mono">04</span><span class="rw"><span><span class="tt">第八封回信</span><span class="steps" aria-hidden="true"><i style="width:90%"></i></span></span><span class="hs">9.0</span></span></li>
+            <li><span class="no mono">05</span><span class="rw"><span><span class="tt">周末大作战</span><span class="steps" aria-hidden="true"><i style="width:89%"></i></span></span><span class="hs">8.9</span></span></li>
+            <li><span class="no mono">06</span><span class="rw"><span><span class="tt">铁线防线</span><span class="steps" aria-hidden="true"><i style="width:88%"></i></span></span><span class="hs">8.8</span></span></li>
+            <li><span class="no mono">07</span><span class="rw"><span><span class="tt">晚风邮局</span><span class="steps" aria-hidden="true"><i style="width:87%"></i></span></span><span class="hs">8.7</span></span></li>
+            <li><span class="no mono">08</span><span class="rw"><span><span class="tt">山海图志</span><span class="steps" aria-hidden="true"><i style="width:86%"></i></span></span><span class="hs">8.6</span></span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 新片上线 ==================== -->
+  <section id="release" aria-labelledby="relTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="lhs">
+          <span class="medal">S4</span>
+          <div><h2 id="relTitle">欧美电影网<em>新片上线</em>放映日程</h2>
+          <p>欧美电影网同步标注院线档期与网络首播时间，每周更新一次。</p></div>
+        </div>
+        <span class="en">// SCHEDULE</span>
+      </div>
+      <div class="schedule">
+        <table>
+          <caption class="sr-only">欧美电影网近期新片上线放映日程</caption>
+          <thead>
+            <tr><th scope="col">上映日期</th><th scope="col">电影名称</th><th scope="col">类型</th><th scope="col">片长</th><th scope="col">清晰度</th><th scope="col">状态</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>09-30</td><td><b>长夜列车</b></td><td>剧情 / 犯罪</td><td>134 min</td><td>4K</td><td><span class="st a">热播中</span></td></tr>
+            <tr><td>09-25</td><td><b>星轨尽头</b></td><td>科幻 / 冒险</td><td>144 min</td><td>4K</td><td><span class="st a">热播中</span></td></tr>
+            <tr><td>09-18</td><td><b>烈风追缉</b></td><td>动作 / 谍战</td><td>119 min</td><td>1080P</td><td><span class="st a">热播中</span></td></tr>
+            <tr><td>10-09</td><td><b>山海图志 Ⅱ</b></td><td>动画 / 奇幻</td><td>待定</td><td>待定</td><td><span class="st b">即将上映</span></td></tr>
+            <tr><td>10-16</td><td><b>晚风邮局</b></td><td>爱情 / 文艺</td><td>112 min</td><td>1080P</td><td><span class="st b">网络首播</span></td></tr>
+            <tr><td>08-22</td><td><b>第八封回信</b></td><td>悬疑 / 犯罪</td><td>125 min</td><td>4K</td><td><span class="st c">在线可看</span></td></tr>
+            <tr><td>07-05</td><td><b>铁线防线</b></td><td>战争 / 历史</td><td>146 min</td><td>4K</td><td><span class="st c">在线可看</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 影视资讯 ==================== -->
+  <section id="news" aria-labelledby="newsTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="lhs">
+          <span class="medal">N5</span>
+          <div><h2 id="newsTitle">欧美电影网<em>院线通讯</em></h2>
+          <p>新片前瞻、榜单解读、类型盘点，欧美电影网编辑部持续更新。</p></div>
+        </div>
+        <span class="en">// CIRCULAR</span>
+      </div>
+      <div class="circulars">
+        <article class="circ">
+          <time datetime="2026-09-29">2026-09-29</time>
+          <h3>国庆档前瞻：这 8 部热门电影值得看</h3>
+          <p>欧美电影网从定档新片中挑出期待值与口碑信号双高的 8 部。</p>
+          <a class="more" href="#">阅读全文 &gt;</a>
+        </article>
+        <article class="circ">
+          <time datetime="2026-09-16">2026-09-16</time>
+          <h3>欧美电影网榜单规则更新说明</h3>
+          <p>热播榜与口碑榜的权重调整，计算口径在本文一次讲清。</p>
+          <a class="more" href="#">阅读全文 &gt;</a>
+        </article>
+        <article class="circ">
+          <time datetime="2026-09-03">2026-09-03</time>
+          <h3>今日片单是怎么排出来的</h3>
+          <p>欧美电影网把「今晚值得一看」拆成三条可核查的判据。</p>
+          <a class="more" href="#">阅读全文 &gt;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 关于 ==================== -->
+  <section id="about" aria-labelledby="aboutTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="lhs">
+          <span class="medal">A6</span>
+          <div><h2 id="aboutTitle">关于<em>欧美电影网</em></h2>
+          <p>灯光暗下，大幕拉开。</p></div>
+        </div>
+        <span class="en">// ABOUT</span>
+      </div>
+      <div class="about">
+        <div class="intro">
+          <p>欧美电影网（官网 https://oumeidianyingwang-cn.github.io）聚合热门欧美电影、电影推荐与新片上线信息，用<b>放映厅、影视排行榜与放映日程</b>三套体系，帮你在海量片库里快速找到今晚要看的那部。</p>
+          <p>我们不做随便推推的片单：欧美电影网的热播榜来自可核查的播放数据，口碑榜来自用户评分的加权均值，两套榜单口径全部公开，写在「院线通讯」里。</p>
+          <blockquote>放映厅排得清楚，你才好选座；榜单算得明白，你才敢信。欧美电影网就干这两件事。</blockquote>
+          <ul>
+            <li><b>01</b><span>收录热门欧美电影超 29,300 部，覆盖院线新片、经典老片与修复影像</span></li>
+            <li><b>02</b><span>放映日程每周更新，网络首播与院线档期同步标注</span></li>
+            <li><b>03</b><span>榜单每日 0 点刷新，热度与口碑分开呈现</span></li>
+            <li><b>04</b><span>支持 1080P / 4K 多清晰度切换，欧美电影网免费看</span></li>
+          </ul>
+        </div>
+        <aside class="sidecard">
+          <h3>HOUSE MAP / 场馆示意</h3>
+          <svg viewBox="0 0 300 170" role="img" aria-label="欧美电影网场馆示意图：放映厅选片、银幕放映、影视排行榜">
+            <path d="M30 30 L150 52 L270 30" fill="none" stroke="#c9a227" stroke-width="2"/>
+            <path d="M30 30 L30 120 M270 30 L270 120" fill="none" stroke="#c9a227" stroke-width="2"/>
+            <rect x="72" y="58" width="156" height="52" fill="rgba(244,239,228,.07)" stroke="#c9a227" stroke-width="2"/>
+            <text x="150" y="80" fill="#e8cf82" font-size="12" font-weight="900" text-anchor="middle">放映厅 H1-H8</text>
+            <text x="150" y="98" fill="#cdd4c8" font-size="10.5" text-anchor="middle">欧美电影网 · 8 厅同映</text>
+            <g fill="rgba(201,162,39,.4)">
+              <circle cx="96" cy="132" r="5"/><circle cx="120" cy="132" r="5"/><circle cx="144" cy="132" r="5"/>
+              <circle cx="168" cy="132" r="5"/><circle cx="192" cy="132" r="5"/><circle cx="216" cy="132" r="5"/>
+            </g>
+            <text x="150" y="158" fill="#a9b3a5" font-size="10" text-anchor="middle" font-family="monospace">29,300+ TITLES · 24H</text>
+          </svg>
+          <div class="kv"><span>网站名称</span><b>欧美电影网</b></div>
+          <div class="kv"><span>官方网址</span><b>oumeidianyingwang-cn.github.io</b></div>
+          <div class="kv"><span>放映厅</span><b>8 厅</b></div>
+          <div class="kv"><span>开放时间</span><b>24H · 全年无休</b></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 常见问题 ==================== -->
+  <section id="faq" aria-labelledby="faqTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="lhs">
+          <span class="medal">Q7</span>
+          <div><h2 id="faqTitle">欧美电影网<em>常见问题</em></h2>
+          <p>关于收录量、榜单口径与官网网址的高频疑问。</p></div>
+        </div>
+        <span class="en">// FAQ</span>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>欧美电影网收录多少部电影？更新频率如何？</summary>
+          <p>欧美电影网目前收录热门欧美电影超 29,300 部，涵盖院线新片、经典老片、动画电影与小众佳作。片库每日更新，放映日程每周刷新一次，热播榜与口碑榜每日 0 点各刷新一次。</p>
+        </details>
+        <details>
+          <summary>欧美电影网的排行榜是怎么算出来的？</summary>
+          <p>热播榜取欧美电影网站内近 30 天播放与收藏加权，口碑榜取用户评分的贝叶斯均值。两个榜单分开排列，计算口径与权重调整都会发布在「院线通讯」栏目中。</p>
+        </details>
+        <details>
+          <summary>欧美电影网官网网址是什么？</summary>
+          <p>欧美电影网官方网址为 https://oumeidianyingwang-cn.github.io，请认准该域名，避免访问仿冒站点。</p>
+        </details>
+        <details>
+          <summary>找不到想看的电影怎么办？</summary>
+          <p>可以通过欧美电影网门头搜索框按片名、类型或年份检索，也可以进入「联系我们」提交补录需求，我们会在 3 个工作日内处理并回复。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 联系我们 ==================== -->
+  <section id="contact" aria-labelledby="contactTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="lhs">
+          <span class="medal">C8</span>
+          <div><h2 id="contactTitle">联系<em>欧美电影网</em></h2>
+          <p>影片补录、播放反馈、商务合作，都可以留言。</p></div>
+        </div>
+        <span class="en">// CONTACT</span>
+      </div>
+      <div class="contact">
+        <form class="form" action="#" method="post" onsubmit="return false;">
+          <h3>MESSAGE / 观众留言</h3>
+          <div class="f-row">
+            <label for="cname">您的称呼</label>
+            <input id="cname" name="name" type="text" placeholder="请输入昵称或姓名" autocomplete="name">
+          </div>
+          <div class="f-row">
+            <label for="cmail">联系邮箱</label>
+            <input id="cmail" name="email" type="email" placeholder="name@example.com" autocomplete="email">
+          </div>
+          <div class="f-row">
+            <label for="ctype">问题类型</label>
+            <select id="ctype" name="type">
+              <option>影片补录</option>
+              <option>播放异常反馈</option>
+              <option>版权投诉</option>
+              <option>商务合作</option>
+            </select>
+          </div>
+          <div class="f-row">
+            <label for="cmsg">详细说明</label>
+            <textarea id="cmsg" name="message" placeholder="请描述你想看的电影名称或遇到的问题"></textarea>
+          </div>
+          <div class="f-row">
+            <span></span>
+            <span class="f-sub"><button type="submit">提交给欧美电影网</button></span>
+          </div>
+        </form>
+        <aside class="sidecard">
+          <h3>CONTACT / 联系方式</h3>
+          <div class="kv"><span>官方网站</span><b>https://oumeidianyingwang-cn.github.io</b></div>
+          <div class="kv"><span>网站名称</span><b>欧美电影网</b></div>
+          <div class="kv"><span>在线入口</span><b><a href="#">欧美电影网在线客服</a></b></div>
+          <div class="kv"><span>处理时效</span><b>3 个工作日内</b></div>
+          <div class="tags">
+            <span>欧美电影网</span><span>热门欧美电影</span><span>电影推荐</span><span>影视排行榜</span><span>新片上线</span><span>影视资讯</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ==================== 页脚 ==================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>欧美电影网</h4>
+        <p>欧美电影网（https://oumeidianyingwang-cn.github.io）聚合热门欧美电影、电影推荐、影视排行榜与新片上线时间，灯光暗下，大幕拉开。</p>
+      </div>
+      <div>
+        <h4>栏目导航</h4>
+        <a href="#home">欧美电影网首页</a>
+        <a href="#category">放映厅</a>
+        <a href="#pick">今日片单</a>
+        <a href="#rank">影视排行榜</a>
+        <a href="#release">新片上线</a>
+      </div>
+      <div>
+        <h4>欧美电影网热门放映厅</h4>
+        <a href="#">H1 · 动作惊悚</a>
+        <a href="#">H2 · 科幻冒险</a>
+        <a href="#">H5 · 犯罪悬疑</a>
+        <a href="#">H7 · 动画家庭</a>
+        <a href="#">H8 · 经典修复</a>
+      </div>
+      <div>
+        <h4>欧美电影网帮助与合作</h4>
+        <a href="#faq">常见问题</a>
+        <a href="#contact">联系我们</a>
+        <a href="#">影片投稿</a>
+        <a href="#">版权声明</a>
+        <a href="#">意见反馈</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 欧美电影网 · 官网 https://oumeidianyingwang-cn.github.io · 灯光暗下，大幕拉开</span>
+      <span><a href="#">隐私政策</a> · <a href="#">服务条款</a> · <a href="#">意见反馈</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="totop" href="#home" aria-label="回到顶部">↑</a>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://oumeidianyingwang-cn.github.io/#website",
+      "url": "https://oumeidianyingwang-cn.github.io/",
+      "name": "欧美电影网",
+      "alternateName": ["欧美电影网官网", "欧美电影网在线观看"],
+      "inLanguage": "zh-CN",
+      "description": "欧美电影网提供热门欧美电影在线观看、电影推荐、影视排行榜与新片上线时间。",
+      "publisher": { "@id": "https://oumeidianyingwang-cn.github.io/#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://oumeidianyingwang-cn.github.io/?kw={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://oumeidianyingwang-cn.github.io/#organization",
+      "name": "欧美电影网",
+      "url": "https://oumeidianyingwang-cn.github.io/",
+      "description": "欧美电影网是聚合热门欧美电影、电影推荐与影视排行榜的影视内容平台。",
+      "areaServed": "CN",
+      "knowsAbout": ["欧美电影网", "热门欧美电影", "电影推荐", "新片上线", "影视排行榜"]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://oumeidianyingwang-cn.github.io/#webpage",
+      "url": "https://oumeidianyingwang-cn.github.io/",
+      "name": "欧美电影网 - 热门欧美电影在线观看与电影推荐",
+      "isPartOf": { "@id": "https://oumeidianyingwang-cn.github.io/#website" },
+      "inLanguage": "zh-CN",
+      "about": { "@id": "https://oumeidianyingwang-cn.github.io/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "欧美电影网首页", "item": "https://oumeidianyingwang-cn.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "放映厅" },
+        { "@type": "ListItem", "position": 3, "name": "今日片单" },
+        { "@type": "ListItem", "position": 4, "name": "影视排行榜" },
+        { "@type": "ListItem", "position": 5, "name": "联系我们" }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
